@@ -1,5 +1,6 @@
 import DomainSearch from '@/components/DomainSearch';
 import LiveMarketplaceFeed from '@/components/LiveMarketplaceFeed';
+import AuthButton from '@/components/AuthButton';
 
 export default function HomePage() {
   const dashboardUrl = process.env.NEXT_PUBLIC_DOMA_DASHBOARD_URL;
@@ -9,6 +10,9 @@ export default function HomePage() {
       {/* Header */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        <div className="absolute top-4 right-4 z-10">
+          <AuthButton />
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
           <div className="text-center animate-fade-in-up">
             <div className="flex items-center justify-center gap-3 mb-8">

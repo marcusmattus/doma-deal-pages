@@ -1,7 +1,7 @@
 import { getDomain, getOrderbook } from '@/lib/domaClient';
 import DealHeader from '@/components/DealHeader';
 import Orderbook from '@/components/Orderbook';
-import OfferPanel from '@/components/OfferPanel';
+import RealOfferPanel from '@/components/RealOfferPanel';
 import ChatStarter from '@/components/ChatStarter';
 import { buildJsonLd } from '@/lib/seo';
 import { Metadata } from 'next';
@@ -101,8 +101,8 @@ export default async function Page({ params }: PageProps) {
 
           {/* Right Column - Offers & Chat */}
           <div className="space-y-6">
-            <OfferPanel domainKey={key} />
-            <ChatStarter domainKey={key} />
+            <RealOfferPanel domainKey={key} />
+            <ChatStarter domainKey={key} sellerAddress={ob.owner} />
           </div>
         </div>
 

@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { usePrivy } from '@privy-io/react-auth';
 import { track } from '@/lib/metrics';
-import MarketplaceChat from './MarketplaceChat';
+import RealXMTPChat from './RealXMTPChat';
 
 interface DomainKey {
   tld: string;
@@ -11,18 +12,23 @@ interface DomainKey {
 
 interface ChatStarterProps {
   domainKey: DomainKey;
+  sellerAddress: string;
 }
 
-export default function ChatStarter({ domainKey }: ChatStarterProps) {
+export default function ChatStarter({ domainKey, sellerAddress }: ChatStarterProps) {
+  const { authenticated } = usePrivy();
   const [showChat, setShowChat] = useState(false);
   const [opening, setOpening] = useState(false);
 
   async function openChat() {
+    if (!authenticated) {
+      alert('Please connect your wallet first to start chatting.');
+      return;
+    }
+
     setOpening(true);
     try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      // Track chat initiation
       track('chat_started', { ...domainKey, topic: `doma://${domainKey.tld}/${domainKey.label}#offer` });
       
       setShowChat(true);
@@ -35,7 +41,7 @@ export default function ChatStarter({ domainKey }: ChatStarterProps) {
   }
 
   if (showChat) {
-    return <MarketplaceChat domainKey={domainKey} />;
+    return <RealXMTPChat domainKey={domainKey} sellerAddress={sellerAddress} />;
   }
 
   return (
