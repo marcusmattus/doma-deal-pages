@@ -70,7 +70,7 @@ export default async function Page({ params }: PageProps) {
       {/* Navigation Breadcrumb */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-gray-600">
+          <nav className="flex items-center space-x-2 text-sm text-gray-600 animate-slide-in">
             <a href="/" className="hover:text-blue-600 transition-colors">
               Home
             </a>
@@ -88,7 +88,7 @@ export default async function Page({ params }: PageProps) {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in-up">
           {/* Left Column - Domain Info & Orderbook */}
           <div className="lg:col-span-2 space-y-6">
             <DealHeader 
@@ -107,8 +107,8 @@ export default async function Page({ params }: PageProps) {
         </div>
 
         {/* Additional Information */}
-        <div className="mt-12 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">About This Domain</h2>
+        <div className="mt-12 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift animate-fade-in">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">About This Domain</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
             <div>
               <h3 className="font-medium text-gray-900 mb-2">Domain Details</h3>
@@ -144,10 +144,10 @@ export default async function Page({ params }: PageProps) {
         </div>
 
         {/* How it Works */}
-        <div className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">How Domain Trading Works</h2>
+        <div className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 hover-lift animate-fade-in">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">How Domain Trading Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-white font-bold">1</span>
               </div>
@@ -155,7 +155,7 @@ export default async function Page({ params }: PageProps) {
               <p className="text-gray-600 text-sm">Create a time-boxed offer with your desired price and expiration time</p>
             </div>
             
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-white font-bold">2</span>
               </div>
@@ -163,7 +163,7 @@ export default async function Page({ params }: PageProps) {
               <p className="text-gray-600 text-sm">Message the seller using XMTP for secure, domain-bound conversations</p>
             </div>
             
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-white font-bold">3</span>
               </div>

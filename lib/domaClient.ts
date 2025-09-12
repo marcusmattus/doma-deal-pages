@@ -155,7 +155,7 @@ export async function createOffer(input: {
 export async function getAvailableDomains(): Promise<DomainKey[]> {
   try {
     const r = await fetch(`${BASE}/domains`, { 
-      cache: 'no-store',
+      next: { revalidate: 3600 }, // Cache for 1 hour instead of no-store
       headers: {
         'Accept': 'application/json',
         'User-Agent': 'Doma-Deal-Pages/1.0'

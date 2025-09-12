@@ -1,3 +1,6 @@
+import DomainSearch from '@/components/DomainSearch';
+import LiveMarketplaceFeed from '@/components/LiveMarketplaceFeed';
+
 export default function HomePage() {
   const dashboardUrl = process.env.NEXT_PUBLIC_DOMA_DASHBOARD_URL;
   
@@ -7,7 +10,7 @@ export default function HomePage() {
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up">
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,29 +23,11 @@ export default function HomePage() {
             </div>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Zero-friction deal pages for tokenized domains with time-boxed offers and XMTP chat. 
-              Built for <span className="font-semibold text-blue-600">Track 5 — Landing Pages & Messaging</span>
+              Live marketplace for tokenized domains with real-time chat and instant deals
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                Next.js 14 + TypeScript
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                XMTP Integration
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                SEO Optimized
-              </div>
+              <DomainSearch />
             </div>
           </div>
         </div>
@@ -51,14 +36,14 @@ export default function HomePage() {
       {/* Demo Pages Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Live Demo Pages</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Live Marketplace</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore tokenized domains with live orderbook data, time-boxed offers, and XMTP messaging
+            Active domain negotiations happening right now - join the conversation
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift animate-fade-in">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
                 <span className="text-orange-600 font-bold">🔥</span>
@@ -73,16 +58,16 @@ export default function HomePage() {
             <p className="text-gray-600 mb-6">Premium domain with active orderbook and trading history</p>
             <a 
               href="/ape/laser" 
-              className="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2"
+              className="group inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2 transform hover:scale-105"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
               View Deal Page
             </a>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift animate-fade-in">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
                 <span className="text-purple-600 font-bold">⚡</span>
@@ -97,14 +82,16 @@ export default function HomePage() {
             <p className="text-gray-600 mb-6">Tech domain perfect for blockchain projects and DeFi protocols</p>
             <a 
               href="/core/alpha" 
-              className="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2"
+              className="group inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2 transform hover:scale-105"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
               View Deal Page
             </a>
           </div>
+
+          <LiveMarketplaceFeed />
         </div>
       </section>
 
@@ -119,7 +106,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -129,7 +116,7 @@ export default function HomePage() {
               <p className="text-gray-600">Submit offers with automatic expiration timers for urgency and clarity</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -139,7 +126,7 @@ export default function HomePage() {
               <p className="text-gray-600">Domain-bound encrypted chat threads for secure negotiations</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2 2z" />
@@ -165,9 +152,9 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/ape/laser"
-              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2"
+              className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200 gap-2 transform hover:scale-105"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               Start Demo
@@ -207,9 +194,9 @@ export default function HomePage() {
                 Zero-friction deal pages for tokenized domains built on Doma Protocol.
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-400">
-                <span>Built for Track 5</span>
+                <span>Powered by Doma Protocol</span>
                 <span>•</span>
-                <span>Landing Pages & Messaging</span>
+                <span>XMTP Messaging</span>
               </div>
             </div>
 

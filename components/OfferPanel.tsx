@@ -57,8 +57,8 @@ export default function OfferPanel({ domainKey }: OfferPanelProps) {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-      <div className="flex items-center gap-3 mb-6">
+    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift">
+      <div className="flex items-center gap-3 mb-6 animate-fade-in">
         <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
           <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -131,7 +131,7 @@ export default function OfferPanel({ domainKey }: OfferPanelProps) {
           <button 
             onClick={onSubmit} 
             disabled={submitting || !price} 
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2 transform hover:scale-105 disabled:hover:scale-100"
           >
             {submitting ? (
               <>
@@ -152,8 +152,8 @@ export default function OfferPanel({ domainKey }: OfferPanelProps) {
           </button>
         </div>
       ) : (
-        <div className="space-y-4">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="space-y-4 animate-fade-in">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 animate-scale-in">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ export default function OfferPanel({ domainKey }: OfferPanelProps) {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-gray-50 rounded-lg p-4 animate-fade-in">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-600">Time Remaining:</span>
               <Countdown endsAt={offer.expiresAt} />
@@ -184,7 +184,7 @@ export default function OfferPanel({ domainKey }: OfferPanelProps) {
             </p>
             <button
               onClick={() => setOffer(null)}
-              className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+              className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200 hover:underline"
             >
               Make Another Offer
             </button>
